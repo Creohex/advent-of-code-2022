@@ -49,7 +49,7 @@ class Cmd:
     def __repr__(self):
         return f"{self.command} -> {self.arg if self.command == 'cd' else self.output}"
 
-def parse_data() -> list[Cmd]:
+def parse_data() -> dict[str, File]:
     output = open("../inputs/day07", "r").read().strip().split("\n")
     pattern_cd = r"^\$\scd\s(.*)$"
     pattern_ls = r"^\$\sls$"
